@@ -1,6 +1,6 @@
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'motion/react';
-import { CheckCircle2, FileText, UserCheck, Calendar, ArrowRight } from 'lucide-react';
+import { CheckCircle2, FileText, UserCheck, Calendar, ArrowRight, GraduationCap, Globe, User } from 'lucide-react';
 
 export default function Admission() {
   const steps = [
@@ -27,6 +27,30 @@ export default function Admission() {
     "Copies des derniers diplômes obtenus",
     "Relevés de notes des 2 dernières années",
     "Pièce d'identité en cours de validité"
+  ];
+
+  const modalites = [
+    {
+      icon: <GraduationCap className="w-10 h-10" />,
+      title: "Étudiants résidants en France",
+      desc: "Les étudiants en France peuvent soumettre leur dossier en ligne, évalué sur des critères académiques et professionnels. Un entretien personnel approfondira les motivations et objectifs de chaque candidat, assurant l'alignement avec les valeurs et exigences de notre programme.",
+      cta: "Candidater",
+      href: "/contact"
+    },
+    {
+      icon: <Globe className="w-10 h-10" />,
+      title: "Étudiants Internationaux",
+      desc: "Nous traitons les candidatures internationales avec une attention particulière à l'excellence académique et professionnelle. Chaque dossier est minutieusement examiné, et les candidats retenus sont invités à un entretien pour évaluer leur compatibilité avec nos programmes.",
+      cta: "Candidater",
+      href: "/contact"
+    },
+    {
+      icon: <User className="w-10 h-10" />,
+      title: "Accompagnement individuel",
+      desc: "Nous accompagnons individuellement nos étudiants dans leur recherche d'alternance. Notre processus inclut un suivi rigoureux et un soutien sur mesure, garantissant que chaque étudiant trouve une alternance en adéquation avec ses ambitions professionnelles et son parcours académique.",
+      cta: "Contacter un conseiller",
+      href: "/contact"
+    }
   ];
 
   return (
@@ -57,6 +81,41 @@ export default function Admission() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* Section Modalités d'admission */}
+        <div className="mb-24">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-1 bg-brand-secondary rounded-full" />
+            <h2 className="text-3xl font-bold text-brand-text">
+              Modalités <span className="bg-brand-secondary text-white px-3 py-1 rounded-md">d'admission</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {modalites.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col gap-4"
+              >
+                <div className="text-brand-text">{item.icon}</div>
+                <h3 className="text-xl font-bold text-brand-text">{item.title}</h3>
+                <p className="text-brand-text/60 font-light leading-relaxed text-sm flex-1">
+                  {item.desc}
+                </p>
+                <a
+                  href={item.href}
+                  className="text-brand-secondary font-semibold hover:underline transition-all"
+                >
+                  {item.cta}
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
