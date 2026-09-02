@@ -132,12 +132,15 @@ export default function Home() {
                 className="w-full sm:w-auto bg-brand-surface text-brand-primary px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold hover:bg-brand-accent hover:text-white transition-all shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 Déposer ma candidature
+              </Link>
               <Link
                 to="/formations"
                 className="w-full sm:w-auto border-2 border-white/30 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold hover:bg-white/10 hover:border-white transition-all hover:-translate-y-0.5 active:translate-y-0 text-center"
+              >
                 Découvrir nos formations
               </Link>
             </div>
+          </motion.div>
         </div>
       </section>
     </main>
