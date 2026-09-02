@@ -19,13 +19,13 @@ export default function Footer() {
             Une école d'excellence dédiée à la réussite professionnelle et à l'ambition des futurs leaders du commerce et du marketing.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
+            <a href="#" aria-label="Instagram Elixir Business School" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
               <Instagram className="w-5 h-5 text-brand-text/40 group-hover:text-white transition-colors" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
+            <a href="#" aria-label="LinkedIn Elixir Business School" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
               <Linkedin className="w-5 h-5 text-brand-text/40 group-hover:text-white transition-colors" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
+            <a href="#" aria-label="Facebook Elixir Business School" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-secondary-hover hover:text-white transition-colors group">
               <Facebook className="w-5 h-5 text-brand-text/40 group-hover:text-white transition-colors" />
             </a>
           </div>
@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-10 border-t border-brand-border flex flex-col md:row items-center justify-between space-y-4 md:space-y-0 relative z-10">
+      <div className="max-w-7xl mx-auto pt-10 border-t border-brand-border flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
         <p className="text-brand-text/20 text-[10px] uppercase tracking-widest text-center md:text-left">
           &copy; {currentYear} Elixir Business School. Tous droits réservés.
         </p>

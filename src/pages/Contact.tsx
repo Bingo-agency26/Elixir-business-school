@@ -62,38 +62,47 @@ export default function Contact() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-secondary-soft rounded-full translate-x-1/2 -translate-y-1/2" />
               
-              <form className="space-y-6 relative z-10">
+              <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-text/40 ml-2">Prénom</label>
+                    <label htmlFor="firstname" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Prénom</label>
                     <input
+                      id="firstname"
                       type="text"
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary outline-none transition-all"
+                      required
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
                       placeholder="Jean"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-text/40 ml-2">Nom</label>
+                    <label htmlFor="lastname" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Nom</label>
                     <input
+                      id="lastname"
                       type="text"
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary outline-none transition-all"
+                      required
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
                       placeholder="Dupont"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-brand-text/40 ml-2">Email Professionnel</label>
+                  <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Email Professionnel</label>
                   <input
+                    id="email"
                     type="email"
-                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary outline-none transition-all"
+                    required
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
                     placeholder="jean.dupont@email.com"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-brand-text/40 ml-2">Sujet</label>
-                  <select className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary outline-none transition-all appearance-none cursor-pointer">
+                  <label htmlFor="subject" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Sujet</label>
+                  <select
+                    id="subject"
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all cursor-pointer"
+                  >
                     <option>Demande d'informations</option>
                     <option>Candidature Formation</option>
                     <option>Partenariat Entreprise</option>
@@ -102,15 +111,17 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-brand-text/40 ml-2">Message</label>
+                  <label htmlFor="message" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Message</label>
                   <textarea
+                    id="message"
                     rows={4}
-                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary outline-none transition-all resize-none"
+                    required
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all resize-none"
                     placeholder="Comment pouvons-nous vous aider ?"
                   />
                 </div>
 
-                <button className="w-full bg-brand-text text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-brand-secondary-hover transition-all shadow-xl group">
+                <button type="submit" className="w-full bg-brand-text text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-brand-secondary-hover hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-xl group">
                   <span>Envoyer ma demande</span>
                   <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>

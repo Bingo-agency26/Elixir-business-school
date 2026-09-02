@@ -126,21 +126,18 @@ export default function Home() {
             <p className="text-xl text-white/70 font-light mb-12 max-w-2xl mx-auto">
               Rejoignez une communauté d'apprenants déterminés et formez-vous auprès des meilleurs. Votre carrière mérite un cadre exceptionnel.
             </p>
-            <div className="flex flex-col sm:row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto bg-brand-surface text-brand-primary px-10 py-5 rounded-full font-bold hover:bg-brand-accent hover:text-white transition-all shadow-xl"
+                className="w-full sm:w-auto bg-brand-surface text-brand-primary px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold hover:bg-brand-accent hover:text-white transition-all shadow-xl hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
-                Postuler maintenant
-              </Link>
+                Déposer ma candidature
               <Link
-                to="/admission"
-                className="w-full sm:w-auto border border-white/30 text-white px-10 py-5 rounded-full font-bold hover:bg-white/10 transition-all"
-              >
-                Guide d'admission
+                to="/formations"
+                className="w-full sm:w-auto border-2 border-white/30 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold hover:bg-white/10 hover:border-white transition-all hover:-translate-y-0.5 active:translate-y-0 text-center"
+                Découvrir nos formations
               </Link>
             </div>
-          </motion.div>
         </div>
       </section>
     </main>

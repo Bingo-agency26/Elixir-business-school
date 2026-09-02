@@ -29,14 +29,15 @@ export default function Navbar() {
 
   return (
     <nav
+      aria-label="Navigation principale"
       className={cn(
         'fixed w-full z-50 transition-all duration-300 px-6 py-4',
-        scrolled ? 'bg-white/90 backdrop-blur-md border-b border-brand-border py-3' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-md border-b border-brand-border py-3 shadow-sm' : 'bg-transparent'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3">
-          <Logo className="h-10 w-10" />
+        <Link to="/" className="flex items-center space-x-3 group" aria-label="Elixir Business School - Accueil">
+          <Logo className="h-10 w-10 transition-transform group-hover:scale-105" />
           <span className="text-2xl font-semibold tracking-tight uppercase text-brand-text hidden sm:block">
             ELIXIR <span className="font-light opacity-60">BUSINESS SCHOOL</span>
           </span>
@@ -50,7 +51,7 @@ export default function Navbar() {
               to={link.path}
               className={cn(
                 "text-xs font-bold tracking-widest uppercase transition-all hover:text-brand-secondary",
-                location.pathname === link.path ? "text-brand-secondary" : "text-brand-text"
+                location.pathname === link.path ? "text-brand-secondary underline underline-offset-8 decoration-2" : "text-brand-text"
               )}
             >
               {link.name}
@@ -58,7 +59,7 @@ export default function Navbar() {
           ))}
           <Link
             to="/contact"
-            className="px-6 py-2.5 bg-brand-text text-white text-xs font-bold uppercase rounded-full hover:bg-brand-secondary-hover transition-all flex items-center group"
+            className="px-6 py-2.5 bg-brand-text text-white text-xs font-bold uppercase rounded-full hover:bg-brand-secondary-hover transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center group"
           >
             Candidater
           </Link>
@@ -66,8 +67,10 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-brand-text"
+          className="md:hidden text-brand-text p-2 rounded-lg hover:bg-brand-text/5 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

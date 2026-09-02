@@ -46,18 +46,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:row items-start space-y-4 sm:space-y-0 sm:space-x-6"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
           >
             <Link
               to="/formations"
-              className="bg-brand-text text-white px-10 py-5 rounded-xl text-lg font-bold shadow-xl hover:bg-brand-secondary-hover transition-all flex items-center group"
+              className="w-full sm:w-auto bg-brand-text text-white px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-base sm:text-lg font-bold shadow-lg hover:shadow-2xl hover:bg-brand-secondary-hover hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center group"
             >
-              Découvrir nos formations
+              <span>Découvrir nos formations</span>
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/admission"
-              className="px-10 py-5 rounded-xl text-lg font-bold border border-brand-border hover:bg-brand-bg transition-all text-brand-text"
+              className="w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-base sm:text-lg font-bold border-2 border-brand-text/15 hover:border-brand-secondary hover:text-brand-secondary hover:bg-brand-secondary-soft/30 hover:-translate-y-0.5 active:translate-y-0 transition-all text-brand-text text-center justify-center flex items-center"
             >
               Prendre rendez-vous
             </Link>
