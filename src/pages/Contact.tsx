@@ -86,15 +86,27 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Email Professionnel</label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
-                    placeholder="jean.dupont@email.com"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Email Professionnel</label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
+                      placeholder="jean.dupont@email.com"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-[10px] uppercase tracking-widest font-bold text-brand-text/60 ml-2">Numéro de Téléphone</label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      required
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-border focus:border-brand-secondary focus:ring-2 focus:ring-brand-secondary/20 outline-none transition-all"
+                      placeholder="06 12 34 56 78"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
