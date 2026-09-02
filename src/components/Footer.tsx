@@ -56,15 +56,15 @@ export default function Footer() {
           <ul className="space-y-4 text-sm text-brand-text/40">
             <li className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-brand-secondary shrink-0" />
-              <span>123 Avenue de la Réussite, 75000 Paris</span>
+              <span>16 rue Saint Antoine du T, 31000 Toulouse</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-brand-secondary shrink-0" />
-              <span>+33 1 23 45 67 89</span>
+              <a href="tel:0759069817" className="hover:text-brand-secondary transition-colors">07 59 06 98 17</a>
             </li>
             <li className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-brand-secondary shrink-0" />
-              <span>contact@elixir-business-school.fr</span>
+              <a href="mailto:contact@elixirbusiness-school.fr" className="hover:text-brand-secondary transition-colors">contact@elixirbusiness-school.fr</a>
             </li>
           </ul>
         </div>

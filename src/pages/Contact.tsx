@@ -28,7 +28,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-brand-text/40 font-bold mb-1">Téléphone</h4>
-                  <p className="text-xl font-bold text-brand-text">+33 1 23 45 67 89</p>
+                  <a href="tel:0759069817" className="text-xl font-bold text-brand-text hover:text-brand-secondary transition-colors">07 59 06 98 17</a>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-brand-text/40 font-bold mb-1">Email</h4>
-                  <p className="text-xl font-bold text-brand-text">contact@elixir-business-school.fr</p>
+                  <a href="mailto:contact@elixirbusiness-school.fr" className="text-xl font-bold text-brand-text hover:text-brand-secondary transition-colors">contact@elixirbusiness-school.fr</a>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-brand-text/40 font-bold mb-1">Adresse</h4>
-                  <p className="text-lg font-bold text-brand-text">123 Avenue de la Réussite, 75000 Paris</p>
+                  <p className="text-lg font-bold text-brand-text">16 rue Saint Antoine du T, 31000 Toulouse</p>
                 </div>
               </div>
             </div>
