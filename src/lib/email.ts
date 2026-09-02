@@ -18,13 +18,19 @@ export const sendContactEmail = async (params: EmailParams) => {
     SERVICE_ID,
     TEMPLATE_ID,
     {
+      // English keys
       firstname: params.firstname,
       lastname: params.lastname,
       email: params.email,
       phone: params.phone,
       subject: params.subject,
       message: params.message,
-      // Fallback combined variables for different template formats
+      // French keys matching user's template
+      prenom: params.firstname,
+      nom: params.lastname,
+      telephone: params.phone,
+      sujet: params.subject,
+      // Combined fallbacks
       from_name: `${params.firstname} ${params.lastname}`,
       from_email: params.email,
       reply_to: params.email,
