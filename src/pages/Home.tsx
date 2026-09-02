@@ -39,22 +39,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl relative group">
+              <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl relative group border border-gray-100">
                 <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6 }}
+                  whileHover={{ scale: 1.025 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
                   alt="Corporate Strategy Meeting"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-brand-text text-white p-10 rounded-[40px] shadow-2xl">
+              <div className="absolute -bottom-6 -right-6 bg-brand-text text-white p-8 sm:p-10 rounded-[40px] shadow-2xl">
                 <div className="text-4xl font-serif font-bold mb-1">10+</div>
                 <div className="text-xs uppercase tracking-widest font-bold opacity-70">Années d'excellence</div>
               </div>
@@ -71,13 +72,20 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {features.map((feature, index) => (
-                  <div key={index} className="space-y-3">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                    className="space-y-3 p-4 rounded-2xl hover:bg-gray-50/80 transition-colors"
+                  >
                     <div className="text-brand-secondary">{feature.icon}</div>
                     <h4 className="font-bold text-lg text-brand-text">{feature.title}</h4>
-                    <p className="text-sm text-brand-text/50 font-light">
+                    <p className="text-sm text-brand-text/60 font-light">
                       {feature.text}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -116,9 +124,10 @@ export default function Home() {
         
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
               Prêt à accélérer votre <span className="text-brand-accent italic">évolution</span> ?
