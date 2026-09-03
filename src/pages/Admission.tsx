@@ -1,21 +1,25 @@
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'motion/react';
 import { CheckCircle2, FileText, UserCheck, Calendar, ArrowRight, GraduationCap, Globe, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Admission() {
   const steps = [
     {
-      icon: <FileText className="w-8 h-8" />,
+      stepNumber: "01",
+      icon: <FileText className="w-7 h-7 text-brand-secondary" />,
       title: "Dossier de candidature",
       desc: "Complétez votre formulaire en ligne avec votre CV et lettre de motivation."
     },
     {
-      icon: <UserCheck className="w-8 h-8" />,
+      stepNumber: "02",
+      icon: <UserCheck className="w-7 h-7 text-brand-secondary" />,
       title: "Entretien individuel",
       desc: "Échangez avec nos responsables sur votre parcours et votre projet professionnel."
     },
     {
-      icon: <Calendar className="w-8 h-8" />,
+      stepNumber: "03",
+      icon: <Calendar className="w-7 h-7 text-brand-secondary" />,
       title: "Réponse sous 48h",
       desc: "Nous nous engageons sur une réactivité maximale pour votre admission."
     }
@@ -31,21 +35,21 @@ export default function Admission() {
 
   const modalites = [
     {
-      icon: <GraduationCap className="w-10 h-10" />,
+      icon: <GraduationCap className="w-8 h-8 text-brand-secondary" />,
       title: "Étudiants résidants en France",
       desc: "Les étudiants en France peuvent soumettre leur dossier en ligne, évalué sur des critères académiques et professionnels. Un entretien personnel approfondira les motivations et objectifs de chaque candidat, assurant l'alignement avec les valeurs et exigences de notre programme.",
       cta: "Candidater",
       href: "/contact"
     },
     {
-      icon: <Globe className="w-10 h-10" />,
+      icon: <Globe className="w-8 h-8 text-brand-secondary" />,
       title: "Étudiants Internationaux",
       desc: "Nous traitons les candidatures internationales avec une attention particulière à l'excellence académique et professionnelle. Chaque dossier est minutieusement examiné, et les candidats retenus sont invités à un entretien pour évaluer leur compatibilité avec nos programmes.",
       cta: "Candidater",
       href: "/contact"
     },
     {
-      icon: <User className="w-10 h-10" />,
+      icon: <User className="w-8 h-8 text-brand-secondary" />,
       title: "Accompagnement individuel",
       desc: "Nous accompagnons individuellement nos étudiants dans leur recherche d'alternance. Notre processus inclut un suivi rigoureux et un soutien sur mesure, garantissant que chaque étudiant trouve une alternance en adéquation avec ses ambitions professionnelles et son parcours académique.",
       cta: "Contacter un conseiller",
@@ -61,29 +65,36 @@ export default function Admission() {
           subtitle="Processus d'Admission"
         />
 
+        {/* Processus d'admission en 3 étapes avec numéros bien visibles */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-50 p-10 rounded-[32px] border border-gray-100 relative group overflow-hidden"
+              className="bg-white p-8 rounded-3xl border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 relative group flex flex-col justify-between"
             >
-              <div className="absolute top-0 right-0 p-4 opacity-5">
-                <div className="text-8xl font-black text-brand-text/10">{index + 1}</div>
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-14 h-14 bg-brand-secondary-soft rounded-2xl flex items-center justify-center shrink-0">
+                    {step.icon}
+                  </div>
+                  <span className="text-xl font-extrabold text-brand-secondary bg-brand-secondary-soft px-4 py-1.5 rounded-full border border-brand-secondary/20 shadow-xs">
+                    {step.stepNumber}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-brand-text mb-3">{step.title}</h3>
+                <p className="text-brand-text/70 font-light leading-relaxed text-base">
+                  {step.desc}
+                </p>
               </div>
-              <div className="text-brand-secondary mb-6">{step.icon}</div>
-              <h3 className="text-2xl font-bold text-brand-text mb-4">{step.title}</h3>
-              <p className="text-brand-text/50 font-light leading-relaxed">
-                {step.desc}
-              </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Section Modalités d'admission */}
+        {/* Section Modalités d'admission avec cadres/cartes distinctes */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-1 bg-brand-secondary rounded-full" />
@@ -100,26 +111,32 @@ export default function Admission() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col gap-4"
+                className="bg-white p-8 rounded-3xl border border-gray-200/80 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="text-brand-text">{item.icon}</div>
-                <h3 className="text-xl font-bold text-brand-text">{item.title}</h3>
-                <p className="text-brand-text/60 font-light leading-relaxed text-sm flex-1">
-                  {item.desc}
-                </p>
-                <a
-                  href={item.href}
-                  className="text-brand-secondary font-semibold hover:underline transition-all"
+                <div>
+                  <div className="w-14 h-14 bg-brand-secondary-soft rounded-2xl flex items-center justify-center mb-6 shrink-0">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-text mb-4">{item.title}</h3>
+                  <p className="text-brand-text/70 font-light leading-relaxed text-sm mb-8">
+                    {item.desc}
+                  </p>
+                </div>
+                <Link
+                  to={item.href}
+                  className="w-full py-3.5 px-6 bg-brand-text hover:bg-brand-secondary text-white font-bold text-xs tracking-wider uppercase rounded-xl flex items-center justify-center gap-2 transition-all shadow-md group"
                 >
-                  {item.cta}
-                </a>
+                  <span>{item.cta}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
 
+        {/* Section Documents Requis & Accompagnement */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="bg-brand-text p-12 rounded-[48px] text-white">
+          <div className="bg-brand-text p-12 rounded-[48px] text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-8 italic text-white">Documents requis</h3>
             <ul className="space-y-6">
               {documents.map((doc, index) => (
@@ -187,10 +204,13 @@ export default function Admission() {
               </div>
             </div>
 
-            <button className="mt-12 w-full sm:w-auto bg-brand-text text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center justify-center group hover:bg-brand-secondary transition-all">
-              Démarrer ma candidature
+            <Link 
+              to="/contact" 
+              className="mt-12 w-full sm:w-auto bg-brand-text text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center justify-center group hover:bg-brand-secondary transition-all inline-flex"
+            >
+              <span>Démarrer ma candidature</span>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
