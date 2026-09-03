@@ -27,25 +27,25 @@ export default function Courses() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/40 blur-[100px] rounded-full" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-extrabold mb-6 text-brand-accent italic">Besoin d'un conseil personnalisé ?</h3>
-              <p className="text-amber-100/80 font-normal text-base mb-8 leading-relaxed">
+              <h3 className="text-3xl sm:text-4xl font-extrabold mb-6 text-white italic">Besoin d'un conseil personnalisé ?</h3>
+              <p className="text-gray-200 font-normal text-base mb-8 leading-relaxed">
                 Nos conseillers en formation sont là pour vous aider à choisir le parcours le plus adapté à votre projet professionnel et à vos ambitions.
               </p>
               <Link
                 to="/contact"
-                className="bg-brand-accent hover:bg-white text-brand-primary px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 inline-flex items-center"
+                className="bg-brand-accent hover:bg-white text-brand-primary px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-wider transition-all shadow-xl hover:scale-105 inline-flex items-center"
               >
                 Prendre rendez-vous
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/10 border border-brand-accent/30 p-6 rounded-3xl hover:bg-white/15 transition-colors">
+              <div className="bg-white/10 border-2 border-brand-accent/40 p-6 rounded-3xl hover:bg-white/15 transition-colors">
                 <div className="text-4xl font-black text-brand-accent mb-2">100%</div>
-                <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100">Alternance garantie</div>
+                <div className="text-xs uppercase font-black tracking-widest text-white">Alternance garantie</div>
               </div>
-              <div className="bg-white/10 border border-brand-accent/30 p-6 rounded-3xl hover:bg-white/15 transition-colors">
+              <div className="bg-white/10 border-2 border-brand-accent/40 p-6 rounded-3xl hover:bg-white/15 transition-colors">
                 <div className="text-4xl font-black text-brand-accent mb-2">RNCP</div>
-                <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100">Titres certifiés</div>
+                <div className="text-xs uppercase font-black tracking-widest text-white">Titres certifiés</div>
               </div>
             </div>
           </div>
