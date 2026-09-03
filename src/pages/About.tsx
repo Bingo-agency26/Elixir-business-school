@@ -1,10 +1,7 @@
 import SectionHeading from '../components/SectionHeading';
-import { motion } from 'motion/react';
 import { ShieldCheck, Zap, Heart, Globe } from 'lucide-react';
 
 export default function About() {
-  const customEase = [0.16, 1, 0.3, 1];
-
   const values = [
     {
       icon: <ShieldCheck className="w-9 h-9 text-brand-accent group-hover:text-white transition-colors duration-300" />,
@@ -37,13 +34,7 @@ export default function About() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: customEase }}
-            className="aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl relative border-2 border-brand-primary/15 group"
-          >
+          <div className="aspect-[4/5] rounded-[48px] overflow-hidden shadow-2xl relative border-2 border-brand-primary/15 group">
             <img
               src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop"
               alt="Atmosphère d'excellence Elixir Business School"
@@ -51,15 +42,9 @@ export default function About() {
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: customEase }}
-            className="bg-white p-10 rounded-[40px] border-2 border-brand-primary/15 shadow-xl"
-          >
+          <div className="bg-white p-10 rounded-[40px] border-2 border-brand-primary/15 shadow-xl">
             <h3 className="text-4xl font-extrabold text-brand-primary mb-8 leading-tight italic">
               Bienvenue chez <br />
               <span className="text-brand-secondary">Elixir Business School</span>
@@ -75,10 +60,10 @@ export default function About() {
             <div className="mt-12 p-8 border-l-4 border-brand-accent bg-brand-primary text-white shadow-lg rounded-tr-3xl rounded-br-3xl italic">
               "L'éducation n'est pas la préparation à la vie ; l'éducation est la vie elle-même."
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Values section avec micro-interactions sur-mesure */}
+        {/* Values section avec micro-interactions GPU CSS */}
         <section className="py-24 bg-brand-primary rounded-[56px] text-white px-12 relative overflow-hidden shadow-2xl border-2 border-brand-accent/30">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-secondary/20 blur-[120px] rounded-full" />
           <div className="max-w-6xl mx-auto relative z-10">
@@ -91,14 +76,9 @@ export default function About() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((v, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.12, ease: customEase }}
-                  className="bg-white/10 border-2 border-brand-accent/30 p-8 rounded-3xl backdrop-blur-md shadow-xl hover:shadow-2xl hover:border-brand-accent hover:bg-brand-secondary/40 transition-all duration-300 text-center group cursor-pointer flex flex-col items-center justify-between"
+                  className="bg-white/10 border-2 border-brand-accent/30 p-8 rounded-3xl backdrop-blur-md shadow-xl hover:shadow-2xl hover:border-brand-accent hover:bg-brand-secondary/40 hover:-translate-y-2.5 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] text-center group cursor-pointer flex flex-col items-center justify-between"
                 >
                   <div>
                     <div className="w-16 h-16 bg-brand-primary/80 rounded-2xl border border-brand-accent/30 flex justify-center items-center mb-6 shadow-md group-hover:scale-125 group-hover:rotate-[6deg] group-hover:bg-brand-secondary transition-all duration-300">
@@ -109,7 +89,7 @@ export default function About() {
                       {v.desc}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

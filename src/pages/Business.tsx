@@ -1,11 +1,8 @@
 import SectionHeading from '../components/SectionHeading';
-import { motion } from 'motion/react';
 import { Briefcase, Handshake, TrendingUp, Search, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Business() {
-  const customEase = [0.16, 1, 0.3, 1];
-
   const benefits = [
     {
       icon: <Handshake className="w-6 h-6 text-brand-accent group-hover:scale-110 transition-transform" />,
@@ -38,13 +35,7 @@ export default function Business() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: customEase }}
-            className="bg-white p-10 rounded-[40px] border-2 border-brand-primary/15 shadow-xl"
-          >
+          <div className="bg-white p-10 rounded-[40px] border-2 border-brand-primary/15 shadow-xl">
             <h3 className="text-3xl sm:text-4xl font-extrabold text-brand-primary mb-6 leading-tight">
               Recrutez les <span className="text-brand-secondary italic">Talents</span> de demain
             </h3>
@@ -53,43 +44,27 @@ export default function Business() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <motion.div 
-                whileHover={{ scale: 1.03, y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-brand-primary text-white p-6 rounded-3xl shadow-lg border-2 border-brand-accent/30 italic cursor-pointer group"
-              >
+              <div className="bg-brand-primary text-white p-6 rounded-3xl shadow-lg border-2 border-brand-accent/30 italic cursor-pointer group hover:-translate-y-1.5 transition-all duration-300">
                 <div className="text-brand-accent font-black text-4xl mb-1 group-hover:scale-105 transition-transform">92%</div>
                 <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100/80">Satisfaction Partenaires</div>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                whileHover={{ scale: 1.03, y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-brand-primary text-white p-6 rounded-3xl shadow-lg border-2 border-brand-accent/30 italic cursor-pointer group"
-              >
+              <div className="bg-brand-primary text-white p-6 rounded-3xl shadow-lg border-2 border-brand-accent/30 italic cursor-pointer group hover:-translate-y-1.5 transition-all duration-300">
                 <div className="text-brand-accent font-black text-4xl mb-1 group-hover:scale-105 transition-transform">250+</div>
                 <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100/80">Entreprises de Confiance</div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: customEase }}
-            className="p-8 bg-brand-primary rounded-[48px] border-2 border-brand-accent/30 shadow-2xl relative overflow-hidden"
-          >
+          <div className="p-8 bg-brand-primary rounded-[48px] border-2 border-brand-accent/30 shadow-2xl relative overflow-hidden">
              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/30 blur-3xl rounded-full" />
              <div className="relative z-10 p-8 text-white border border-brand-accent/20 rounded-[36px] bg-white/5 backdrop-blur-sm">
                 <h4 className="text-2xl font-extrabold mb-8 italic text-brand-accent">Pourquoi nous choisir ?</h4>
                 <div className="space-y-6">
                   {benefits.map((b, i) => (
-                    <motion.div 
+                    <div 
                       key={i} 
-                      whileHover={{ x: 6 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="flex space-x-4 p-3 rounded-2xl hover:bg-white/10 transition-colors duration-300 group cursor-pointer"
+                      className="flex space-x-4 p-3 rounded-2xl hover:bg-white/10 hover:translate-x-2 transition-all duration-300 group cursor-pointer"
                     >
                       <div className="w-12 h-12 bg-brand-primary/80 border border-brand-accent/30 rounded-2xl flex items-center justify-center shrink-0 shadow-md group-hover:bg-brand-secondary group-hover:scale-110 transition-all duration-300">
                         {b.icon}
@@ -98,20 +73,14 @@ export default function Business() {
                         <h5 className="font-extrabold text-lg mb-1 text-white group-hover:text-brand-accent transition-colors">{b.title}</h5>
                         <p className="text-sm text-white/80 font-normal leading-relaxed">{b.desc}</p>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
              </div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: customEase }}
-          className="bg-brand-primary p-12 rounded-[48px] border-2 border-brand-accent/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden"
-        >
+        <div className="bg-brand-primary p-12 rounded-[48px] border-2 border-brand-accent/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
           <div>
             <h3 className="text-3xl font-extrabold mb-2 italic text-brand-accent">Vous avez un besoin de recrutement ?</h3>
             <p className="text-amber-100/80 font-normal text-base">Nos conseillers relations entreprises vous répondent sous 24h.</p>
@@ -123,7 +92,7 @@ export default function Business() {
              <span>Nous confier un poste</span>
              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </main>
   );

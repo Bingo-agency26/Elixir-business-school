@@ -1,55 +1,51 @@
 import SectionHeading from '../components/SectionHeading';
 import CourseCard from '../components/CourseCard';
 import { COURSES } from '../constants';
-import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function Courses() {
   return (
-    <main className="min-h-screen pt-32 pb-24 px-6 bg-brand-bg">
+    <main className="min-h-screen pt-32 pb-24 px-6 bg-[#F1F5F9]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <SectionHeading
             title="Catalogue des Formations d'Excellence"
             subtitle="Votre futur commence ici"
           />
-          <p className="text-lg text-brand-text/60 font-light leading-relaxed">
+          <p className="text-lg text-gray-700 font-normal leading-relaxed">
             Découvrez nos programmes spécialisés, conçus pour allier théorie académique et pratique professionnelle intensive. Chaque formation est une promesse de montée en compétences et de réussite.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {COURSES.map((course, index) => (
-            <motion.div
-              key={course.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <CourseCard course={course} />
-            </motion.div>
+          {COURSES.map((course) => (
+            <CourseCard key={course.id} course={course} />
           ))}
         </div>
 
-        <div className="mt-24 p-12 bg-brand-primary rounded-[40px] text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary-soft/40 blur-[100px] rounded-full" />
+        <div className="mt-24 p-12 bg-brand-primary rounded-[48px] border-2 border-brand-accent/30 text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/40 blur-[100px] rounded-full" />
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-serif font-bold mb-6">Besoin d'un conseil personnalisé ?</h3>
-              <p className="text-white/60 font-light mb-8">
+              <h3 className="text-3xl font-extrabold mb-6 text-brand-accent italic">Besoin d'un conseil personnalisé ?</h3>
+              <p className="text-amber-100/80 font-normal text-base mb-8 leading-relaxed">
                 Nos conseillers en formation sont là pour vous aider à choisir le parcours le plus adapté à votre projet professionnel et à vos ambitions.
               </p>
-              <button className="bg-brand-accent text-brand-primary px-8 py-4 rounded-full font-bold hover:bg-brand-accent-hover transition-all shadow-lg shadow-brand-accent-dark/20">
+              <Link
+                to="/contact"
+                className="bg-brand-accent hover:bg-white text-brand-primary px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 inline-flex items-center"
+              >
                 Prendre rendez-vous
-              </button>
+              </Link>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-4xl font-serif font-bold text-brand-accent mb-2">100%</div>
-                <div className="text-xs uppercase tracking-widest text-white/40">Alternance garantie</div>
+              <div className="bg-white/10 border border-brand-accent/30 p-6 rounded-3xl hover:bg-white/15 transition-colors">
+                <div className="text-4xl font-black text-brand-accent mb-2">100%</div>
+                <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100">Alternance garantie</div>
               </div>
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-4xl font-serif font-bold text-brand-accent mb-2">RNCP</div>
-                <div className="text-xs uppercase tracking-widest text-white/40">Titres certifiés</div>
+              <div className="bg-white/10 border border-brand-accent/30 p-6 rounded-3xl hover:bg-white/15 transition-colors">
+                <div className="text-4xl font-black text-brand-accent mb-2">RNCP</div>
+                <div className="text-xs uppercase font-extrabold tracking-widest text-amber-100">Titres certifiés</div>
               </div>
             </div>
           </div>
