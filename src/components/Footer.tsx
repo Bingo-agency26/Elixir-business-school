@@ -47,6 +47,7 @@ export default function Footer() {
             <li><Link to="/a-propos" className="hover:text-brand-secondary transition-colors">À Propos</Link></li>
             <li><Link to="/admission" className="hover:text-brand-secondary transition-colors">Admission</Link></li>
             <li><Link to="/entreprises" className="hover:text-brand-secondary transition-colors">Entreprises</Link></li>
+            <li><Link to="/blog" className="hover:text-brand-secondary transition-colors font-bold text-brand-primary">Blog & Articles SEO</Link></li>
             <li><Link to="/contact" className="hover:text-brand-secondary transition-colors">Contact</Link></li>
           </ul>
         </div>

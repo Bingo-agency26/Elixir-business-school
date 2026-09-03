@@ -9,6 +9,8 @@ import CourseDetail from './pages/CourseDetail';
 import Admission from './pages/Admission';
 import Business from './pages/Business';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +35,8 @@ export default function App() {
             <Route path="/admission" element={<Admission />} />
             <Route path="/entreprises" element={<Business />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* Fallback */}
             <Route path="*" element={<Home />} />
           </Routes>
