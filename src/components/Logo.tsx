@@ -7,16 +7,9 @@ interface LogoProps {
 export default function Logo({ className = "h-12 w-auto" }: LogoProps) {
   return (
     <img 
-      src="./Logo.png" 
+      src="/Logo.png" 
       alt="Elixir Business School Logo" 
       className={`object-contain shrink-0 ${className}`}
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        if (!target.dataset.fallbackTried) {
-          target.dataset.fallbackTried = 'true';
-          target.src = 'Logo.png';
-        }
-      }}
     />
   );
 }
