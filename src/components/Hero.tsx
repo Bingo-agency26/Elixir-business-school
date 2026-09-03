@@ -81,7 +81,7 @@ export default function Hero() {
               </div>
               
               <div className="text-base font-extrabold text-brand-primary mb-2">
-                Session Septembre 2025
+                Session Octobre 2026
               </div>
               
               <div className="bg-amber-100/90 text-amber-950 border border-amber-300 p-3.5 rounded-xl text-xs font-bold leading-snug shadow-xs">
