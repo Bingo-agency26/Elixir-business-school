@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 relative z-10">
         <div className="col-span-1 md:col-span-1">
           <Link to="/" className="flex items-center space-x-3 mb-6">
-            <Logo className="h-10 w-10" />
+            <Logo className="h-10 sm:h-12 w-auto" />
             <span className="font-sans font-bold text-xl tracking-tight uppercase">
               ELIXIR <span className="font-light opacity-60">BUSINESS SCHOOL</span>
             </span>

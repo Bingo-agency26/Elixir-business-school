@@ -37,7 +37,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 group" aria-label="Elixir Business School - Accueil">
-          <Logo className="h-10 w-10 transition-transform group-hover:scale-105" />
+          <Logo className="h-10 sm:h-12 w-auto transition-transform group-hover:scale-105" />
           <span className="text-2xl font-semibold tracking-tight uppercase text-brand-text hidden sm:block">
             ELIXIR <span className="font-light opacity-60">BUSINESS SCHOOL</span>
           </span>

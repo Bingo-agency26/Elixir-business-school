@@ -5,12 +5,19 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ className = "h-10" }: LogoProps) {
+export default function Logo({ className = "h-12 w-auto" }: LogoProps) {
   return (
     <img 
       src={logoImg} 
-      alt="Logo" 
-      className={className}
+      alt="Elixir Business School Logo" 
+      className={`object-contain shrink-0 ${className}`}
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        if (!target.dataset.triedFallback) {
+          target.dataset.triedFallback = 'true';
+          target.src = './Logo.png';
+        }
+      }}
     />
   );
 }
