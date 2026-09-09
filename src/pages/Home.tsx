@@ -47,8 +47,8 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-brand-primary text-white p-8 sm:p-10 rounded-[36px] shadow-2xl border-2 border-brand-accent/30">
-                <div className="text-4xl font-extrabold mb-1 text-brand-accent">10+</div>
-                <div className="text-xs uppercase tracking-widest font-black text-amber-100">Années d'excellence</div>
+                <div className="text-4xl font-extrabold mb-1 text-brand-accent">100%</div>
+                <div className="text-xs uppercase tracking-widest font-black text-amber-100">Alternance & Pratique</div>
               </div>
             </div>
 
@@ -111,10 +111,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <div>
             <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
-              Prêt à accélérer votre <span className="text-brand-accent italic">évolution</span> ?
+              Prêt à lancer votre <span className="text-brand-accent italic">formation</span> ?
             </h2>
             <p className="text-xl text-amber-100/90 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
-              Rejoignez une communauté d'apprenants déterminés et formez-vous auprès des meilleurs. Votre carrière mérite un cadre exceptionnel.
+              Du BTS au Mastère, nos équipes vous accompagnent à chaque étape, du choix de votre cursus jusqu'à votre insertion en entreprise.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <Link
