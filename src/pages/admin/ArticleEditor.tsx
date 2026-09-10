@@ -34,7 +34,7 @@ export default function ArticleEditor() {
     slug: '',
     category: 'Alternance & Carrière',
     readTime: '5 min de lecture',
-    date: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'Long', year: 'numeric' }),
+    date: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }),
     author: 'Équipe Pédagogique',
     authorRole: 'Elixir Business School',
     excerpt: '',
@@ -390,13 +390,13 @@ export default function ArticleEditor() {
                     </button>
                   </div>
 
-                  {postData.content?.sections.map((sec, idx) => (
+                  {(postData.content?.sections || []).map((sec, idx) => (
                     <div key={idx} className="p-5 rounded-2xl border border-gray-200 bg-gray-50/50 space-y-4 relative">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold text-brand-primary bg-white px-3 py-1 rounded-lg border">
                           Section H2 #{idx + 1}
                         </span>
-                        {postData.content!.sections.length > 1 && (
+                        {(postData.content?.sections?.length || 0) > 1 && (
                           <button
                             type="button"
                             onClick={() => handleDeleteSection(idx)}
@@ -583,3 +583,4 @@ export default function ArticleEditor() {
     </main>
   );
 }
+

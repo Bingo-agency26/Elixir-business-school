@@ -322,3 +322,4 @@ export function generateJsonLdSchema(post: BlogPostItem, siteUrl = 'https://elix
     keywords: post.keywords || post.targetKeyword || post.category,
   };
 }
+

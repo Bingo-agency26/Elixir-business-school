@@ -110,3 +110,4 @@ export function loginAdmin(passwordInput: string): boolean {
 export function logoutAdmin(): void {
   localStorage.removeItem(AUTH_KEY);
 }
+

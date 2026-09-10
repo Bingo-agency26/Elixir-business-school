@@ -153,3 +153,4 @@ export default function SeoAssistant({ post }: SeoAssistantProps) {
     </div>
   );
 }
+
