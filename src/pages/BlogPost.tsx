@@ -1,10 +1,47 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { BLOG_POSTS } from '../data/blogData';
-import { ArrowLeft, Clock, Calendar, User, ArrowRight, Share2, CheckCircle2 } from 'lucide-react';
+import { getPostBySlug, getStoredPosts } from '../services/blogService';
+import { generateJsonLdSchema } from '../utils/seoUtils';
+import { ArrowLeft, Clock, Calendar, User, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = BLOG_POSTS.find(p => p.slug === slug);
+  const allPosts = getStoredPosts();
+  const post = getPostBySlug(slug || '');
+
+  // Dynamic SEO Injection into HTML head
+  useEffect(() => {
+    if (!post) return;
+
+    // Document Title
+    const originalTitle = document.title;
+    document.title = post.metaTitle || `${post.title} | Elixir Business School`;
+
+    // Meta Description
+    let metaDescTag = document.querySelector('meta[name="description"]') as HTMLMetaElement;
+    if (!metaDescTag) {
+      metaDescTag = document.createElement('meta');
+      metaDescTag.name = 'description';
+      document.head.appendChild(metaDescTag);
+    }
+    metaDescTag.content = post.metaDescription || post.excerpt;
+
+    // JSON-LD Article Schema Injection
+    const scriptId = 'json-ld-article-schema';
+    let scriptTag = document.getElementById(scriptId) as HTMLScriptElement;
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = scriptId;
+      scriptTag.type = 'application/ld+json';
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(generateJsonLdSchema(post));
+
+    return () => {
+      document.title = originalTitle;
+      if (scriptTag) scriptTag.remove();
+    };
+  }, [post]);
 
   if (!post) {
     return (
@@ -19,7 +56,7 @@ export default function BlogPost() {
     );
   }
 
-  const relatedPosts = BLOG_POSTS.filter(p => p.slug !== post.slug).slice(0, 2);
+  const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
     <main className="min-h-screen pt-32 pb-24 bg-[#F1F5F9]">

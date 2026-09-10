@@ -1,16 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SectionHeading from '../components/SectionHeading';
-import { BLOG_POSTS, BlogPostItem } from '../data/blogData';
+import { BlogPostItem } from '../data/blogData';
+import { getStoredPosts } from '../services/blogService';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, Calendar, User, Search, BookOpen } from 'lucide-react';
+import { ArrowRight, Clock, Calendar, Search, BookOpen } from 'lucide-react';
 
 export default function Blog() {
+  const [posts, setPosts] = useState<BlogPostItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tous');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  useEffect(() => {
+    setPosts(getStoredPosts());
+  }, []);
+
   const categories = ['Tous', 'Alternance & Carrière', 'Formations & BTS', 'Marketing & Innovation', 'Conseils Recrutement'];
 
-  const filteredPosts = BLOG_POSTS.filter(post => {
+  const filteredPosts = posts.filter(post => {
     const matchesCategory = selectedCategory === 'Tous' || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());

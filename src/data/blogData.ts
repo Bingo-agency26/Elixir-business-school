@@ -9,6 +9,15 @@ export interface BlogPostItem {
   authorRole: string;
   excerpt: string;
   image: string;
+  imageAlt?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  targetKeyword?: string;
+  canonicalUrl?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  isDraft?: boolean;
+  updatedAt?: string;
   content: {
     intro: string;
     sections: {
